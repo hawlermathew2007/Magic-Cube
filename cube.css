@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+:root{
+    --general: 130px;
+}
+
+body{
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+}
+
+body > *{
+    text-align: center;
+}
+
+h1{
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    margin-top: 2.2rem;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    margin-top: 12px;
+}
+
+#img1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-shadow: 4px 10px 10px;
+}
+
+#img2{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    box-shadow: 4px 10px 10px;
+    transform: scaleX(-1);
+}
+
+.cube button{
+    font-size: clamp(1.2rem, 3vw, 2.8rem);
+    margin: 0;
+    color: white !important;
+    text-transform: uppercase;
+    border: 0;
+    background-color: black;
+    letter-spacing: 2px;
+}
+
+.wrap{
+    margin-top: 140px;
+    filter: drop-shadow(0 0 0.8rem black)
+}
+
+.cube{
+    margin: auto;
+    position: relative;
+    width: 260px;
+    height: 260px;
+    transform-style: preserve-3d;
+}
+
+.cube div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background-color: black;
+    border: solid 3px #eee;
+
+    text-align: center;
+    transition: 300ms ease-in;
+    cursor: pointer;
+}
+
+.cube div:hover{
+    background-color: white;
+    color: black !important;
+    border: soliheight b100ck;
+}
+
+.front{
+    transform: translateZ(130px);
+}
+
+.back{
+    transform: translateZ(-130px);
+}
+
+.right{
+    left: var(--general);
+    transform: rotateY(90deg);
+}
+
+.left{
+    right: var(--general);
+    transform: rotateY(270deg);
+}
+
+.top{
+    bottom: var(--general);
+    transform: rotateX(90deg);
+}
+
+.bottom{
+    top: var(--general);
+    transform: rotateX(270deg);
+}
+
+.cube{
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
